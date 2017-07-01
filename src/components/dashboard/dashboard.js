@@ -8,7 +8,8 @@ class Dashboard extends Component {
     const people = this.props.people;
     return (
       <div className="dashboard">
-        <Row upOnSmall={1}>
+        <h1 className="app-title">Office list</h1>
+        <Row upOnSmall={1} upOnMedium={2} upOnLarge={3}>
           {
             Object.keys(people).map((id) => <PersonCard key={id} person={people[id]}/>)
           }

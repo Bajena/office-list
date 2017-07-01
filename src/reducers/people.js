@@ -28,7 +28,7 @@ const PEOPLE = {
     id: 3,
     name: 'Konrad Oleksiuk',
     photoUrl: 'https://s3.amazonaws.com/zerply-profile-images/0/5467/big.jpg?1388490409',
-    buttonId: null
+    buttonId: '7722'
   })
 };
 
@@ -59,9 +59,18 @@ export function checkStatusFailed(state, action) {
 }
 
 export function statusChecked(state, action) {
-  let lastSeenAt = moment.unix(action.payload.response.data.lastHeard);
+  let firstSeenAt = moment.unix(action.payload.response.data.after);
+  let lastSeenAt = moment.unix(action.payload.response.data.before);
 
-  return updatePerson(state, action.payload.person.id, { lastSeenAt, isChecking: false });
+  if (!firstSeenAt.isValid()) {
+    firstSeenAt = null;
+  }
+
+  if (!lastSeenAt.isValid()) {
+    lastSeenAt = null;
+  }
+
+  return updatePerson(state, action.payload.person.id, { firstSeenAt, lastSeenAt, isChecking: false, checkError: false });
 }
 
 export const peopleReducer = createReducer(initialState, {
