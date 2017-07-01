@@ -1,9 +1,9 @@
 # Office list
-![image](https://user-images.githubusercontent.com/5732023/27762481-195f6bca-5e73-11e7-96b3-e2d24422f7a8.png)
 
 ## Description
 
 Simple dashboard app written in React. Itt integrates with REST API by bt.tn to display the presence at the office based on button clicks.
+![image](https://user-images.githubusercontent.com/5732023/27762481-195f6bca-5e73-11e7-96b3-e2d24422f7a8.png)
 
 ## Install
 
