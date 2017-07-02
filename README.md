@@ -2,8 +2,13 @@
 
 ## Description
 
-Simple dashboard app written in React. Itt integrates with REST API by bt.tn to display the presence at the office based on button clicks.
-![image](https://user-images.githubusercontent.com/5732023/27762481-195f6bca-5e73-11e7-96b3-e2d24422f7a8.png)
+Simple dashboard app written in React. It display's team members' presence from various sources.
+Currently:
+* REST API by bt.tn to display the presence at the office based on button clicks
+* Slack presence
+
+Preview:
+![image](https://user-images.githubusercontent.com/5732023/27768786-00e59ea8-5f1c-11e7-88ed-c2371019392b.png)
 
 ## Install
 
