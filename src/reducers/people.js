@@ -16,19 +16,22 @@ const PEOPLE = {
     id: 1,
     name: 'Szymon Tymiński',
     photoUrl: 'https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/13439193_1310043972359134_922822888142315783_n.jpg?oh=bba8fbc682ea19fb06bf540bdbc3e3f2&oe=59E5870B',
-    buttonId: null
+    buttonId: null,
+    slackHandle: 'szymon'
   }),
   2: initPerson({
     id: 2,
     name: 'Jan Bajena',
     photoUrl: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/005/040/119/1c7be58.jpg',
-    buttonId: '7709'
+    buttonId: '7709',
+    slackHandle: 'bajena'
   }),
   3: initPerson({
     id: 3,
     name: 'Konrad Oleksiuk',
     photoUrl: 'https://s3.amazonaws.com/zerply-profile-images/0/5467/big.jpg?1388490409',
-    buttonId: '7722'
+    buttonId: '7722',
+    slackHandle: 'konrad'
   })
 };
 

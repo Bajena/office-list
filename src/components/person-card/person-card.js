@@ -7,7 +7,7 @@ import { checkStatus } from '../../actions/people';
 class PersonCard extends Component {
   componentWillMount() {
     this.checkStatus();
-    const intervalId = setInterval(this.checkStatus.bind(this), 5000);
+    const intervalId = setInterval(this.checkStatus.bind(this), 10000);
     this.setState({ intervalId });
   }
 
@@ -59,6 +59,18 @@ class PersonCard extends Component {
     return `At the office since: ${this.lastSeenAt()}`;
   }
 
+  slackStatus() {
+    const users = this.props.slackUsers;
+    const person = this.props.person;
+    const user = users.find(u => u.name === person.slackHandle);
+
+    if (!user) {
+      return 'Slack: no information';
+    }
+
+    return `Slack: ${user.presence}`;
+  }
+
   render() {
     const person = this.props.person;
     return (
@@ -69,8 +81,9 @@ class PersonCard extends Component {
           </MediaObjectSection>
           <MediaObjectSection isMain>
             <h4>{person.name}</h4>
+            <div>{this.statusBadge()}</div>
             <div>{this.worktimeDescription()}</div>
-            <div> {this.statusBadge()}</div>
+            <div>{this.slackStatus()}</div>
           </MediaObjectSection>
         </MediaObject>
       </Column>
